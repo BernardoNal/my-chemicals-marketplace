@@ -8,15 +8,15 @@ require 'faker'
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-# 10.times do
-#   User.create!(
-#     email: Faker::Internet.email,
-#     password: Faker::Internet.password(min_length: 6, max_length: 10),
-#     first_name: Faker::Name.first_name,
-#     last_name: Faker::Name.last_name,
-#     address: Faker::Address.full_address
-#   )
-# end
+10.times do
+  User.create!(
+    email: Faker::Internet.email,
+    password: Faker::Internet.password(min_length: 6, max_length: 10),
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    address: Faker::Address.full_address
+  )
+end
 
 50.times do
   Product.create!(
@@ -27,4 +27,3 @@ require 'faker'
   )
 end
 
-# image_url: Faker::LoremFlickr.image(size: "100x100", search_terms: ['fertilizer'])
