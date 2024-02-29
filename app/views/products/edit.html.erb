@@ -1,0 +1,9 @@
+<h1>Edit product <%= @product.name %></h1>
+<%= simple_form_for @product do |f| %>
+  <%= f.input :name %>
+  <%= f.input :price %>
+  <%= f.input :description %>
+  <%= f.button :submit, "Update Product" %>
+<% end %>
+
+<%= link_to 'Back to Products', product_path(@product)%>
