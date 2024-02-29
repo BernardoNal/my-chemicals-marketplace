@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
     @products = Product.all
@@ -15,6 +15,8 @@ class ProductsController < ApplicationController
 
     @product.save
     redirect_to product_path(@product)
+  def show
+    @product = Product.find(params[:id])
   end
 
   private
