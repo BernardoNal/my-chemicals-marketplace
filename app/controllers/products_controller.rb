@@ -1,8 +1,23 @@
 class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show edit update]
-  
+
   def index
     @products = Product.all
+  end
+
+  def new
+    @product = Product.new
+  end
+
+  def create
+    @product = Product.new(product_params)
+    @product.user = current_user
+
+    if @product.save
+      redirect_to product_path(@product)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def show
@@ -23,6 +38,17 @@ class ProductsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def myproducts
+    @products = current_user.products
+  end
+
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+
+    redirect_to products_path, status: :see_other
   end
 
   private
