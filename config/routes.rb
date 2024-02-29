@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
   resources :products
 
-  # Defines the root path route ("/")
+  #delete "products/:id", to: "products#destroy"
+
+  #destroy"
+# Defines the root path route ("/")
   # root "posts#index"
 end
