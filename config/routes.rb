@@ -9,6 +9,9 @@ Rails.application.routes.draw do
     get "myproducts", on: :collection
   end
 
-  # Defines the root path route ("/")
+  #delete "products/:id", to: "products#destroy"
+
+  #destroy"
+# Defines the root path route ("/")
   # root "posts#index"
 end
