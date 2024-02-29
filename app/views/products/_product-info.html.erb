@@ -1,8 +1,7 @@
 <div class="container">
   <div class="row col-8">
     <div class="card-trip">
-      <% image_url = Faker::LoremFlickr.image(size: "70x70", search_terms: ['fertilizer']) %>
-      <%= image_tag(image_url) %>
+      <%= cl_image_tag @product.photo.key, height: 300, width: 400, crop: :fill %>
       <div class="card-trip-infos">
         <div>
           <h2>Product:</h2>
