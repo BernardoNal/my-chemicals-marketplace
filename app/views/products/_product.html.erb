@@ -1,0 +1,11 @@
+<%= link_to product_path(product) do %>
+  <div class="card-product m-4">
+    <% image_url = Faker::LoremFlickr.image(size: "70x70", search_terms: ['fertilizer']) %>
+    <%= image_tag(image_url) %>
+    <div class="card-product-infos">
+      <h2> <%= product.name %> </h2>
+      <p><strong> <%= product.description %> </strong></p>
+      <p><strong> R$<%= product.price %> </strong></p>
+    </div>
+  </div>
+<% end %>
