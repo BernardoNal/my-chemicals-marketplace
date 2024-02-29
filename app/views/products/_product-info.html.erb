@@ -1,8 +1,7 @@
 <div class="container">
   <div class="row col-8">
     <div class="card-trip">
-      <% image_url = Faker::LoremFlickr.image(size: "70x70", search_terms: ['fertilizer']) %>
-      <%= image_tag(image_url) %>
+      <%= cl_image_tag @product.photo.key, height: 300, width: 400, crop: :fill %>
       <div class="card-trip-infos">
         <div>
           <h2>Product:</h2>
@@ -17,9 +16,9 @@
           <h2>Seller:</h2>
           <p> <%= @product.user.first_name %> <%= @product.user.last_name %> </p>
         </div>
-        <h2 class="card-trip-pricing">R$<%= @product.price %></h2>
-        <a href="#" class="btn btn_success">COMPRAR</a>
-                <p><%= link_to "Delete", product_path(@product),  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+          <h2 class="card-trip-pricing">R$<%= @product.price %></h2>
+          <a href="#" class="btn btn_success">COMPRAR</a>
+          <p><%= link_to "Delete", product_path(@product),  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
       </div>
     </div>
   </div>
