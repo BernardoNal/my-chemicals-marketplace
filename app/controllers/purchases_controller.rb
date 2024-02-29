@@ -1,9 +1,18 @@
 class PurchasesController < ApplicationController
+  def create
+    @purchase = Purchase.new()
+    @data = Time.now
+    @purchase.user = current_user
+    @purchase.date_purchase = @data
+    @purchase.product = Product.find(params[:product_id])
+
+    if @purchase.save
+      redirect_to products_path
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   private
 
-  # Only allow a purchase of trusted parameters through.
-  def purchase_params
-    params.require(:purchase).permit(:product_id)
-    # , :photo
-  end
 end
