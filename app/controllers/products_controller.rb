@@ -9,6 +9,10 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  def myproducts
+    @products = current_user.products
+  end
+
   private
 
   # Only allow a product of trusted parameters through.
