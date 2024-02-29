@@ -1,7 +1,18 @@
 <div class="container">
+  <%= link_to "Add a new product", new_product_path, class: "btn btn-primary" %>
   <div class="cards">
     <% @products.each do |product| %>
-      <%= render("product", product: product) if product.purchases %>
+      <div class="card-product m-4">
+        <% image_url = Faker::LoremFlickr.image(size: "70x70", search_terms: ['fertilizer']) %>
+        <%= image_tag(image_url) %>
+        <div class="card-product-infos">
+          <h2> <%= product.name %> </h2>
+          <p><strong> <%= product.description %> </strong></p>
+          <p><strong> R$<%= product.price %> </strong></p>
+          <%= link_to 'Edit', edit_product_path(product)%>
+          <%= link_to "Delete", product_path(product),  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
   resources :products do
     get "myproducts", on: :collection
+      resources :purchases ,only: [:create]
   end
 
   #delete "products/:id", to: "products#destroy"
