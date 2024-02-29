@@ -24,6 +24,17 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  def myproducts
+    @products = current_user.products
+  end
+
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+
+    redirect_to products_path, status: :see_other
+  end
+
   private
 
   # Only allow a product of trusted parameters through.
