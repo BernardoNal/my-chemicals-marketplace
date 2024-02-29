@@ -13,6 +13,8 @@ class PurchasesController < ApplicationController
     end
   end
 
-  private
+  def mypurchases
+    @purchases = current_user.purchases
+  end
 
 end
