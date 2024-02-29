@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="cards">
+    <% @purchases.each do |purchase| %>
+      <div class="card-product m-4">
+        <div class="card-product-infos">
+        <p>Pedido <%= purchase.id %></p>
+          <h2>Nome: <%= purchase.product.name %></h2>
+          <h2>Valor: R$ <%= purchase.product.price %></h2>
+          <p> <%= purchase.date_purchase %> </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
