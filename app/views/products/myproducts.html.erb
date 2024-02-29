@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="cards">
+    <% @products.each do |product| %>
+      <%= render("product", product: product) if product.purchases %>
+    <% end %>
+  </div>
+</div>

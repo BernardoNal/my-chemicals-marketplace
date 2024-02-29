@@ -16,9 +16,13 @@ class ProductsController < ApplicationController
     @product.save
     redirect_to product_path(@product)
   end
-  
+
   def show
     @product = Product.find(params[:id])
+  end
+
+  def myproducts
+    @products = current_user.products
   end
 
   def destroy
@@ -29,9 +33,6 @@ class ProductsController < ApplicationController
   end
 
   private
-
-
-
 
   # Only allow a product of trusted parameters through.
   def product_params
