@@ -1,7 +1,8 @@
 <div class="container">
-  <div class="row d-flex justify-content-end">
+  <div class="cards">
     <% @products.each do |product| %>
-      <div class="card-product col-3 m-2">
+      <% if product.purchases %>
+      <div class="card-product m-4">
         <% @image_url = Faker::LoremFlickr.image(size: "70x70", search_terms: ['fertilizer']) %>
         <%= image_tag(@image_url) %>
         <div class="card-product-infos">
@@ -10,6 +11,7 @@
           <p><strong> R$<%= product.price %> </strong></p>
         </div>
       </div>
+      <% end %>
     <% end %>
   </div>
 </div>
