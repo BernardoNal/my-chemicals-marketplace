@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[index show edit update]
+  skip_before_action :authenticate_user!, only: %i[index]
 
   def index
     @products = Product.all
@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
     @product.user = current_user
 
     if @product.save
-      redirect_to product_path(@product)
+      redirect_to myproducts_products_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -34,7 +34,7 @@ class ProductsController < ApplicationController
       flash[:alert] = "Product has already been purchased and cannot be edited."
     end
     if @product.update(product_params)
-      redirect_to product_path(@product)
+      redirect_to myproducts_products_path
     else
       render :edit
     end
@@ -48,7 +48,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.destroy
 
-    redirect_to products_path, status: :see_other
+    redirect_to myproducts_products_path, status: :see_other
   end
 
   private
