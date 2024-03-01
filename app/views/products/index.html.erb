@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="cards">
+  <div class="cards" data-turbo-prefetch="false">
     <% @products.each do |product| %>
     <%if product.purchases.count == 0  %>
       <%= render("product", product: product)  %>
