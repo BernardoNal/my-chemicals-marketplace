@@ -21,7 +21,9 @@
           <p> <%= @product.user.first_name %> <%= @product.user.last_name %> </p>
         </div>
         <h2 class="card-trip-pricing">R$<%= @product.price %></h2>
-        <%= link_to "Comprar",product_purchases_path(product), data: {turbo_method: :post, turbo_confirm: "Are you sure?"} , class:'btn btn-success'%>
+        <% if current_user != @product.user %>
+          <%= link_to "Comprar",product_purchases_path(product), data: {turbo_method: :post, turbo_confirm: "Are you sure?"} , class:'btn btn-success'%>
+        <% end %>
         <p><%= link_to "Delete", product_path(@product),  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
       </div>
     </div>
