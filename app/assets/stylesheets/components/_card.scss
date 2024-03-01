@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   border-radius: 15px;
+  color: rgb(18, 17, 17);
 }
 
 .card-product img {
@@ -35,9 +36,13 @@
 }
 
 .cards {
+  a.ma {
+    color: white;
+  }
+
   a {
     text-decoration: none;
-    color: black;
+    color: rgb(32, 31, 31);
   }
 
   display: grid;
