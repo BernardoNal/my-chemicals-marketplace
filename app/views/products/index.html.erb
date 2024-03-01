@@ -1,4 +1,8 @@
 <div class="container">
+  <%= simple_form_for :search, url: products_path, method: :get do |f| %>
+    <%= f.input :query, label: false, placeholder: 'Search...', input_html: { value: params[:query] } %>
+    <%= f.button :submit, 'Search' %>
+  <% end %>
   <div class="cards" data-turbo-prefetch="false">
     <% @products.each do |product| %>
     <%if product.purchases.count == 0  %>
