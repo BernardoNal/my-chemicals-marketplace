@@ -5,6 +5,8 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  border-radius: 15px;
+  margin: 20px 0;
 }
 
 .card-product img {
@@ -14,13 +16,13 @@
 }
 
 .card-product h2 {
-  font-size: 16px;
+  font-size: 34px;
   font-weight: bold;
   margin: 0;
 }
 
 .card-product p {
-  font-size: 12px;
+  font-size: 20px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;

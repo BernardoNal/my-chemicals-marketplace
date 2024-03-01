@@ -1,14 +1,13 @@
 <%= link_to product_path(product) do %>
-  <div class="card-product m-4">
+  <div class="card-product">
     <% if product.photo.attached? %>
       <%= cl_image_tag product.photo.key, height: 300, width: 400, crop: :fill %>
     <% else %>
       <%= image_tag Faker::LoremFlickr.image(size: "70x70", search_terms: ['fertilizer'])%>
     <% end %>
     <div class="card-product-infos">
-      <h2> <%= product.name %> </h2>
-      <p><strong> <%= product.description %> </strong></p>
-      <p><strong> R$<%= product.price %> </strong></p>
+      <h2><%= product.name %></h2>
+      <p><strong>R$ <%= product.price %></strong></p>
     </div>
   </div>
 <% end %>
