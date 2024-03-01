@@ -7,7 +7,7 @@ class PurchasesController < ApplicationController
     @purchase.product = Product.find(params[:product_id])
 
     if @purchase.save
-      redirect_to products_path
+      redirect_to mypurchases_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -16,5 +16,4 @@ class PurchasesController < ApplicationController
   def mypurchases
     @purchases = current_user.purchases
   end
-
 end
