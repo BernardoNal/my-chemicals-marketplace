@@ -3,7 +3,7 @@
   <%= f.input :name %>
   <%= f.input :price %>
   <%= f.input :description %>
-  <%= f.button :submit, "Update Product" %>
+  <%= f.button :submit, "Update Product", class:'btn-update-product' %>
 <% end %>
 
-<%= link_to 'Back to my products', myproducts_products_path%>
+<%= link_to 'Back to my products', myproducts_products_path, class:'btn-back-to-my-products'%>
