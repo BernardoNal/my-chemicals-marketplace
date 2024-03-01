@@ -1,11 +1,14 @@
 .btn-new-product {
   color: white;
-  padding: 8px 24px;
-  border-radius: 25px;
+  padding: 4px 10px ;
+  border-radius: 50%;
   background: #067103;
-  transition: background 0.3s ease;
   text-decoration: none;
-  width: 200px;
+  position: fixed;
+  bottom:20px;
+  right: 20px;
+  font-size:24px;
+
 }
 
 .btn-new-product:hover {
@@ -13,3 +16,41 @@
   color: white;
   transition: background 0.3s ease;
 }
+
+.btn-card-edit {
+  color: white;
+  padding: 4px 8px ;
+  border-radius: 8px;
+  background: #067103;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.btn-card-dlt {
+  color: white;
+  padding: 4px 8px ;
+  border-radius: 8px;
+  background: red;
+  text-decoration: none;
+font-size: 16px;
+
+}
+
+.btn-back-to-my-products {
+  color: white;
+  padding: 4px 8px ;
+  border-radius: 8px;
+  background: #067103;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.btn-update-product {
+  color: white;
+  padding: 4px 8px ;
+  border-radius: 8px;
+  background: #b1b5b6;
+  text-decoration: none;
+  font-size: 16px;
+}
+
