@@ -1,6 +1,15 @@
-.btn-success {
-  color: rgb(0, 79, 128);
+.btn-new-product {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 25px;
+  background: #067103;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  width: 200px;
+}
 
-
-
+.btn-new-product:hover {
+  background: #409106;
+  color: white;
+  transition: background 0.3s ease;
 }
