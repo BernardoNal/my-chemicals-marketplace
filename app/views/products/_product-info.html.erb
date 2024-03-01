@@ -18,7 +18,7 @@
         </div>
         <h2 class="card-trip-pricing">R$<%= @product.price %></h2>
         <%= link_to "Comprar",product_purchases_path(product), data: {turbo_method: :post, turbo_confirm: "Are you sure?"} , class:'btn btn-success'%>
-        <p><%= link_to "Delete", product_path(@product),  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+        <p><%= link_to "Delete", product_path(@product),  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, %></p>
       </div>
     </div>
   </div>
