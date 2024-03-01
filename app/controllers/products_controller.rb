@@ -35,6 +35,7 @@ class ProductsController < ApplicationController
     end
     if @product.update(product_params)
       redirect_to myproducts_products_path
+      flash[:alert] = "Product edited successfully."
     else
       render :edit
     end
