@@ -1,3 +1,7 @@
+<div class="container mt-4"> <!-- Adiciona a classe text-center para centralizar -->
+  <div class="col-md-6 mx-auto">
+
+
 <h2>Log in</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -13,8 +17,11 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+    <%= f.button :submit , "Log in", class: 'btn-primary my-2' %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+  </div>
+</div>
