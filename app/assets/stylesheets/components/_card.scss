@@ -34,6 +34,11 @@
 }
 
 .cards {
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
@@ -46,7 +51,7 @@
 }
 
 .card-trip > img {
-  height: 340px;
+  height: 200px;
   width: 100%;
   object-fit: cover;
 }
@@ -78,6 +83,119 @@
   top: -20px;
   width: 40px;
 }
+
+.product-card {
+  width: 60%; /* Adjust the width of the card */
+  max-width: 800px; /* Adjust the max-width as desired */
+  margin-left: 4%; /* Adjust the left margin for positioning */
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+}
+
+.product-image {
+  flex: 1;
+}
+
+.product-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.product-info {
+  flex: 1;
+  padding: 20px;
+}
+
+.product-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.product-description {
+  margin-bottom: 15px;
+}
+
+.product-price {
+  font-size: 1.2em;
+  color: #009688;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.product-rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.product-rating img {
+  width: 20px;
+  height: auto;
+  margin-right: 5px;
+}
+
+.rating-label {
+  font-size: 0.9em;
+  color: #555;
+}
+
+.btn-add-to-cart {
+  background-color: #009688;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+.btn-add-to-cart:hover {
+  background-color: #00796b;
+}
+
+.limited-offer {
+  font-size: 0.9em;
+  color: #f00;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.seller-info {
+  width: 30%; /* Adjust the width of the seller info */
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-left: 20px; /* Add margin to the left */
+}
+
+.seller-info h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.seller-info p {
+  margin-bottom: 5px;
+}
+
+.card-container {
+  width: 80%;
+  max-width: 1200px; /* Increase the maximum width of the container */
+  margin: 40px auto; /* Center the container */
+  display: flex;
+  justify-content: space-between; /* Space between the card and seller info */
+  align-items: flex-start;
+}
+
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {

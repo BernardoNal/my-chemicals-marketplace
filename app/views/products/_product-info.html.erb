@@ -1,25 +1,29 @@
-<div class="container">
-  <div class="row col-8">
-    <div class="card-trip">
-      <%= cl_image_tag @product.photo.key, height: 300, width: 400, crop: :fill %>
-      <div class="card-trip-infos">
-        <div>
-          <h2>Product:</h2>
-          <p> <%= @product.name %> </p>
-          <br>
-          <h2>Description:</h2>
-          <p> <%= @product.description %> </p>
-        </div>
-      </div>
-      <div class="card-trip-infos">
-        <div>
-          <h2>Seller:</h2>
-          <p> <%= @product.user.first_name %> <%= @product.user.last_name %> </p>
-        </div>
-        <h2 class="card-trip-pricing">R$<%= @product.price %></h2>
-        <%= link_to "Comprar",product_purchases_path(product), data: {turbo_method: :post, turbo_confirm: "Are you sure?"} , class:'btn btn-success'%>
-        <p><%= link_to "Delete", product_path(@product),  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
-      </div>
+<div class="card-container">
+  <div class="product-card">
+    <div class="product-image">
+      <% if product.photo.attached? %>
+        <%= cl_image_tag product.photo.key, height: 300, width: 400, crop: :fill %>
+      <% else %>
+        <%= image_tag Faker::LoremFlickr.image(size: "70x70", search_terms: ['fertilizer'])%>
+      <% end %>
     </div>
+    <div class="product-info">
+        <h2 class="product-title"><%= @product.name %></h2>
+        <p class="product-description"><%= @product.description %></p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <span class="product-price">US$<%= @product.price %></span>
+        <% if current_user != @product.user %>
+          <%= link_to "Comprar",product_purchases_path(product), data: {turbo_method: :post, turbo_confirm: "Are you sure?"} , class: "btn-add-to-cart"%>
+        <% end %>
+    </div>
+  </div>
+  <div class="seller-info">
+    <h3>Seller</h3>
+    <p><%= @product.user.first_name %> <%= @product.user.last_name %></p>
   </div>
 </div>

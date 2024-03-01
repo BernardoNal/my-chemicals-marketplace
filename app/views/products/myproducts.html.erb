@@ -1,16 +1,25 @@
-<div class="container">
-  <%= link_to "Add a new product", new_product_path, class: "btn btn-primary" %>
+<div class="container mt-4">
+  <%= link_to new_product_path, class: "btn-new-product" do %>
+  <i class="fa-solid fa-circle-plus"></i>
+  <% end %>
   <div class="cards">
     <% @products.each do |product| %>
       <div class="card-product m-4">
-        <% image_url = Faker::LoremFlickr.image(size: "70x70", search_terms: ['fertilizer']) %>
-        <%= image_tag(image_url) %>
+        <% if product.photo.attached? %>
+          <%= cl_image_tag product.photo.key, height: 300, width: 400, crop: :fill %>
+        <% else %>
+          <%= image_tag Faker::LoremFlickr.image(size: "70x70", search_terms: ['fertilizer'])%>
+        <% end %>
         <div class="card-product-infos">
           <h2> <%= product.name %> </h2>
           <p><strong> <%= product.description %> </strong></p>
           <p><strong> R$<%= product.price %> </strong></p>
-          <%= link_to 'Edit', edit_product_path(product)%>
-          <%= link_to "Delete", product_path(product),  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+          <% if product.purchases.count == 0 %>
+            <%= link_to 'Edit', edit_product_path(product), class:'btn-card-edit' %>
+            <%= link_to product_path(product),  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:'btn-card-dlt' do  %>
+            <i class="fa-solid fa-trash-can"></i>
+            <%end %>
+          <% end %>
         </div>
       </div>
     <% end %>

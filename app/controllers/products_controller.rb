@@ -2,7 +2,11 @@ class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index]
 
   def index
-    @products = Product.all
+    if params[:search].present? && params[:search][:query].present?
+      @products = Product.where("name ILIKE ?", "#{params[:search][:query]}%")
+    else
+      @products = Product.all
+    end
   end
 
   def new
@@ -35,6 +39,7 @@ class ProductsController < ApplicationController
     end
     if @product.update(product_params)
       redirect_to myproducts_products_path
+      flash[:alert] = "Product edited successfully."
     else
       render :edit
     end
