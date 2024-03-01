@@ -2,5 +2,5 @@ class Product < ApplicationRecord
   belongs_to :user
   has_many :purchases
   has_one_attached :photo
-  validates :name, :price, :description, presence: true
+  validates :name, :price, :description, :photo, presence: true
 end
