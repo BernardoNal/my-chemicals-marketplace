@@ -37,11 +37,15 @@
     <% @product.reviews.each do |review| %>
       <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
-          <div class="fw-bold mb-2">Comment:</div>
+          <% if review.user %>
+            <div class="fw-bold mb-2">Comment from <%= review.user.first_name %> <%= review.user.last_name %>:</div>
+          <% else %>
+            <div class="fw-bold mb-2">Comment from an unknown user:</div>
+          <% end %>
           <p>- <%= review.content %></p>
         </div>
         <span class="badge bg-primary"><% review.rating.times do %> <i class="fa-solid fa-star"></i> <% end %> </span>
-        <% if current_user != @product.user %>
+        <% if current_user == review.user %>
           <%= link_to review_path(review), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete your review?"}, class: "btn bg-transparent" do %><i class="fa-solid fa-trash"></i><% end %>
         <% end %>
       </li>
