@@ -9,8 +9,10 @@ Rails.application.routes.draw do
 
   resources :products do
     get "myproducts", on: :collection
-    resources :purchases ,only: [:create]
+    resources :purchases, only: [:create]
+    resources :reviews, only: %i[new create]
   end
 
+  resources :reviews, only: :destroy
   get "mypurchases" => 'purchases#mypurchases'
 end
