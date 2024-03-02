@@ -27,3 +27,36 @@
     <p><%= @product.user.first_name %> <%= @product.user.last_name %></p>
   </div>
 </div>
+
+<div class="container d-flex justify-content-evenly">
+  <div class="card mt-3 w-50">
+    <div class="card-header">
+      Reviews
+    </div>
+    <ul class="list-group list-group-flush">
+    <% @product.reviews.each do |review| %>
+      <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+          <div class="fw-bold mb-2">Comment:</div>
+          <p>- <%= review.content %></p>
+        </div>
+        <span class="badge bg-primary"><% review.rating.times do %> <i class="fa-solid fa-star"></i> <% end %> </span>
+        <% if current_user != @product.user %>
+          <%= link_to review_path(review), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete your review?"}, class: "btn bg-transparent" do %><i class="fa-solid fa-trash"></i><% end %>
+        <% end %>
+      </li>
+    <% end %>
+    </ul>
+  </div>
+
+  <div class="card shadow-sm bg-white m-5 w-50">
+  <h2 class="m-3">Add review</h2>
+    <div class="m-3">
+      <%= simple_form_for [@product, @review] do |f| %>
+        <%= f.input :rating, collection: (1..5).to_a, label: "Rate this product", input_html: {data: {controller: "star-rating"}} %>
+        <%= f.input :content %>
+        <%= f.submit "Submit review", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
