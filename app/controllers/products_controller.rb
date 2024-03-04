@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
 
   def index
     if params[:search].present? && params[:search][:query].present?
-      @products = Product.where("name ILIKE ?", "#{params[:search][:query]}%")
+      @products = Product.where("name ILIKE :query OR description ILIKE :query", query: "%#{params[:search][:query]}%")
     else
       @products = Product.all
     end
