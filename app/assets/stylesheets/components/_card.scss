@@ -2,11 +2,12 @@
   overflow: hidden;
   height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   border-radius: 15px;
   color: rgb(18, 17, 17);
+  margin-bottom: 16px;
 }
 
 .card-product img {
@@ -16,27 +17,28 @@
 }
 
 .card-product h2 {
-  font-size: 34px;
+  font-size: 20px;
   font-weight: bold;
   margin: 0;
+  font-family: $home-font;
 }
 
 .card-product p {
-  font-size: 20px;
+  font-size: 14px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  font-weight: bold;
+  font-family: $home-font;
 }
 
 .card-product .card-product-infos {
   padding: 16px;
-  width: 100%;
-  text-align: center;
 }
 
 .cards {
-   a.ma {
+  a.ma {
     color: white;
   }
 
@@ -45,16 +47,16 @@
     color: black;
   }
 
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
   margin-top: 32px;
 }
 
 .product-card {
-  width: 60%; /* Adjust the width of the card */
-  max-width: 800px; /* Adjust the max-width as desired */
-  margin-left: 4%; /* Adjust the left margin for positioning */
+  width: 60%;
+  /* Adjust the width of the card */
+  max-width: 800px;
+  /* Adjust the max-width as desired */
+  margin-left: 4%;
+  /* Adjust the left margin for positioning */
   background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
@@ -137,12 +139,14 @@
 }
 
 .seller-info {
-  width: 30%; /* Adjust the width of the seller info */
+  width: 30%;
+  /* Adjust the width of the seller info */
   background-color: #f9f9f9;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-left: 20px; /* Add margin to the left */
+  margin-left: 20px;
+  /* Add margin to the left */
 }
 
 .seller-info h3 {
@@ -156,10 +160,13 @@
 
 .card-container {
   width: 80%;
-  max-width: 1200px; /* Increase the maximum width of the container */
-  margin: 40px auto; /* Center the container */
+  max-width: 1200px;
+  /* Increase the maximum width of the container */
+  margin: 40px auto;
+  /* Center the container */
   display: flex;
-  justify-content: space-between; /* Space between the card and seller info */
+  justify-content: space-between;
+  /* Space between the card and seller info */
   align-items: flex-start;
 }
 
