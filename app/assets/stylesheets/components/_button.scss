@@ -89,3 +89,22 @@
   background: #409106;
   transition: background 0.3s ease;
 }
+
+.btn-add-to-cart {
+  background-color: #009688;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  margin-bottom: 10px;
+  text-decoration: none;
+  align-self: right;
+}
+
+.btn-add-to-cart:hover {
+  background-color: #00796b;
+}

@@ -1,23 +1,22 @@
 <div class="card-container">
   <div class="product-card">
-    <div class="product-image">
+    <div class="product-image m-2">
       <% if product.photo.attached? %>
-        <%= cl_image_tag product.photo.key, height: 300, width: 400, crop: :fill %>
+        <%= cl_image_tag product.photo.key, height: 400, width: 400, crop: :fill %>
       <% else %>
-        <%= image_tag Faker::LoremFlickr.image(size: "70x70", search_terms: ['fertilizer'])%>
+        <%= image_tag Faker::LoremFlickr.image(size: "400x400", search_terms: ['fertilizer']) ,class:'img-fluid'%>
       <% end %>
     </div>
-    <div class="product-info">
+    <div class="product-info pt-2 px-2 mt-2">
         <h2 class="product-title"><%= @product.name %></h2>
         <p class="product-description"><%= @product.description %></p>
-        <span class="product-price">R$ <%= @product.price %></span>
-        <div class="seller-info">
-          <h3>Vendedor</h3>
-          <p><%= @product.user.first_name %> <%= @product.user.last_name %></p>
-        </div>
+        <span class="product-price">R$ <%= sprintf("%.2f", @product.price) %></span>
+          <p>Vendedor: <%= @product.user.first_name %> <%= @product.user.last_name %></p>
         <% if current_user != @product.user %>
-          <%= link_to "Comprar", product_purchases_path(product), data: {turbo_method: :post, turbo_confirm: "Are you sure?"} , class: "btn-add-to-cart"%>
-          <%= link_to "Adicione ao carrinho", add_product_to_cart_cart_path(product_id: product.id), data: { turbo_method: :post, turbo_confirm: "Are you sure?" }, class: "btn-add-to-cart" %>
+        <div class="mt-5 pt-5">
+          <%= link_to "Adicione ao carrinho", add_product_to_cart_cart_path(product_id: product.id), data: { turbo_method: :post, turbo_confirm: "Quer realmente adicionar esse item?" }, class: "btn-add-to-cart " %>
+           <%= link_to "Comprar agora", product_purchases_path(product), data: {turbo_method: :post, turbo_confirm: "Confirmar compra?"} , class: "btn-add-to-cart mx-2"%>
+        </div>
         <% end %>
         </div>
     </div>
