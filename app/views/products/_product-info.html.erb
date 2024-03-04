@@ -9,57 +9,60 @@
     </div>
     <div class="product-info">
         <h2 class="product-title"><%= @product.name %></h2>
-        <p class="product-description"><%= @product.description %></p>
+        <p class="product-description" ><%= @product.description%></p>
         <br>
         <br>
         <br>
         <br>
         <br>
         <br>
-        <span class="product-price">US$<%= @product.price %></span>
-        <% if current_user != @product.user %>
-          <%= link_to "Comprar",product_purchases_path(product), data: {turbo_method: :post, turbo_confirm: "Are you sure?"} , class: "btn-add-to-cart"%>
+        <br>
+        <div><span class="product-price">RS$<%= @product.price %></span></div>
+         <div>
+          <% if current_user != @product.user %>
+          <%= link_to "Comprar",product_purchases_path(product), data: {turbo_method: :post, turbo_confirm: "Confirmar Compra?"} , class: "btn-add-to-cart"%>
+            <div class="seller-info">
+            <h3>Vendedor</h3>
+            <p><%= @product.user.first_name %> <%= @product.user.last_name %></p>
         <% end %>
+        </div>
     </div>
   </div>
-  <div class="seller-info">
-    <h3>Seller</h3>
-    <p><%= @product.user.first_name %> <%= @product.user.last_name %></p>
   </div>
 </div>
 
-<div class="container d-flex justify-content-evenly">
-  <div class="card mt-3 w-50">
+<div class="card-container-review">
+  <div class="card w-50">
     <div class="card-header">
-      Reviews
+      Avaliações
     </div>
     <ul class="list-group list-group-flush">
     <% @product.reviews.each do |review| %>
       <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
           <% if review.user %>
-            <div class="fw-bold mb-2">Comment from <%= review.user.first_name %> <%= review.user.last_name %>:</div>
+            <div class="fw-bold mb-2">Comentario de <%= review.user.first_name %> <%= review.user.last_name %>:</div>
           <% else %>
-            <div class="fw-bold mb-2">Comment from an unknown user:</div>
+            <div class="fw-bold mb-2">Usuario anônimo:</div>
           <% end %>
           <p>- <%= review.content %></p>
         </div>
         <span class="badge bg-primary"><% review.rating.times do %> <i class="fa-solid fa-star"></i> <% end %> </span>
         <% if current_user == review.user %>
-          <%= link_to review_path(review), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete your review?"}, class: "btn bg-transparent" do %><i class="fa-solid fa-trash"></i><% end %>
+          <%= link_to review_path(review), data: {turbo_method: :delete, turbo_confirm: "Apagar Avaliação?"}, class: "btn bg-transparent" do %><i class="fa-solid fa-trash"></i><% end %>
         <% end %>
       </li>
     <% end %>
     </ul>
   </div>
 
-  <div class="card shadow-sm bg-white m-5 w-50">
-  <h2 class="m-3">Add review</h2>
+  <div class="card shadow-sm bg-white w-50">
+  <h2 class="m-3">Adicionar nova Avaliação?</h2>
     <div class="m-3">
       <%= simple_form_for [@product, @review] do |f| %>
-        <%= f.input :rating, collection: (1..5).to_a, label: "Rate this product", input_html: {data: {controller: "star-rating"}} %>
+        <%= f.input :rating, collection: (1..5).to_a, label: "Avalie este produto", input_html: {data: {controller: "star-rating"}} %>
         <%= f.input :content %>
-        <%= f.submit "Submit review", class: "btn btn-primary" %>
+        <%= f.submit "Enviar avaliação", class: "btn-review" %>
       <% end %>
     </div>
   </div>

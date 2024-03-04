@@ -26,13 +26,22 @@
   font-size: 16px;
 }
 
+.btn-add-to-cart{
+  color: white;
+  padding: 4px 8px ;
+  border-radius: 12px;
+  background: #067103;
+  text-decoration: none;
+  font-size: 20px;
+}
+
 .btn-card-dlt {
   color: white;
   padding: 4px 8px ;
   border-radius: 8px;
   background: red;
   text-decoration: none;
-font-size: 16px;
+  font-size: 16px;
 
 }
 
@@ -52,4 +61,11 @@ font-size: 16px;
   background: #b1b5b6;
   text-decoration: none;
   font-size: 16px;
+}
+
+.btn-review {
+  color: white;
+  padding: 4px 8px ;
+  border-radius: 8px;
+  background: #067103;
 }
