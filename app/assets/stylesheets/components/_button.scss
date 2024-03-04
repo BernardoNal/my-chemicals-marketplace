@@ -2,7 +2,7 @@
   color: white;
   padding: 4px 10px ;
   border-radius: 50%;
-  background: #067103;
+  background: $btn-green;
   text-decoration: none;
   position: fixed;
   bottom:20px;
@@ -21,7 +21,7 @@
   color: white;
   padding: 4px 8px ;
   border-radius: 8px;
-  background: #067103;
+  background: $btn-green;
   text-decoration: none;
   font-size: 16px;
 }
@@ -40,7 +40,7 @@ font-size: 16px;
   color: white;
   padding: 4px 8px ;
   border-radius: 8px;
-  background: #067103;
+  background: $btn-green;
   text-decoration: none;
   font-size: 16px;
 }
@@ -52,4 +52,20 @@ font-size: 16px;
   background: #b1b5b6;
   text-decoration: none;
   font-size: 16px;
+}
+
+
+.btn-login {
+  color: white;
+  padding: 4px 8px ;
+  border-radius: 8px;
+  background: $btn-green;
+  text-decoration: none;
+  font-size: 16px;
+  width: 100%;
+}
+
+.btn-login:hover {
+  background: #409106;
+  transition: background 0.3s ease;
 }
