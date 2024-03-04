@@ -2,11 +2,12 @@
   overflow: hidden;
   height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   border-radius: 15px;
   color: rgb(18, 17, 17);
+  margin-bottom: 16px;
 }
 
 .card-product img {
@@ -29,6 +30,8 @@
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  font-weight: bold;
+  font-family: $home-font;
 }
 
 .card-product .card-product-infos {
@@ -40,7 +43,7 @@
 }
 
 .cards {
-   a.ma {
+  a.ma {
     color: white;
   }
 
@@ -49,10 +52,7 @@
     color: black;
   }
 
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-  margin-top: 20px;
+  margin-top: 32px;
 }
 
 .product-btn{
@@ -177,7 +177,8 @@
   max-width: 1200px; /* Increase the maximum width of the container */
   margin: 80px; /* Center the container */
   display: flex;
-  justify-content: space-between; /* Space between the card and seller info */
+  justify-content: space-between;
+  /* Space between the card and seller info */
   align-items: flex-start;
 }
 .card-container-review {
