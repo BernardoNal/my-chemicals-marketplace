@@ -12,14 +12,16 @@
         <% end %>
         <div class="card-product-infos">
           <h2> <%= product.name %> </h2>
-          <p><strong> <%= product.description %> </strong></p>
+          <p><strong> <%= product.description.truncate(50) %> </strong></p>
           <p><strong> R$<%= product.price %> </strong></p>
-          <% if product.purchases.count == 0 %>
-            <%= link_to 'Edit', edit_product_path(product), class:'btn-card-edit ma' %>
-            <%= link_to product_path(product),  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:'btn-card-dlt ma' do  %>
-            <i class="fa-solid fa-trash-can"></i>
-            <%end %>
-          <% end %>
+          <div class="product-btn">
+            <% if product.purchases.count == 0 %>
+              <%= link_to 'Edit', edit_product_path(product), class:'btn-card-edit ma' %>
+              <%= link_to product_path(product),  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:'btn-card-dlt ma' do  %>
+              <i class="fa-solid fa-trash-can"></i>
+              <%end %>
+            <% end %>
+          </div>
         </div>
       </div>
     <% end %>

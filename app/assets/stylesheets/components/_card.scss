@@ -13,18 +13,19 @@
 .card-product img {
   height: 100%;
   width: 120px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .card-product h2 {
-  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
   font-weight: bold;
   margin: 0;
-  font-family: $home-font;
+  align-content: flex-start ;
 }
 
 .card-product p {
-  font-size: 14px;
+  font-size: 8px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -35,6 +36,10 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+  width: 100%;
+  text-align:left;
+  display: flex;
+  flex-direction: column;
 }
 
 .cards {
@@ -50,28 +55,32 @@
   margin-top: 32px;
 }
 
+.product-btn{
+  display: flex;
+  gap: 4px;
+}
 .product-card {
-  width: 60%;
-  /* Adjust the width of the card */
-  max-width: 800px;
-  /* Adjust the max-width as desired */
-  margin-left: 4%;
-  /* Adjust the left margin for positioning */
+  width: 100%;
+  //max-width: 800px; /* Adjust the max-width as desired */
+  margin-left: 4%; /* Adjust the left margin for positioning */
   background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
+  min-height: 200px;
 }
 
 .product-image {
   flex: 1;
+  margin-top: 50px;
 }
 
 .product-image img {
   width: 100%;
   height: auto;
   display: block;
+  margin-left: 4px;
 }
 
 .product-info {
@@ -86,14 +95,16 @@
 
 .product-description {
   margin-bottom: 15px;
+
 }
 
 .product-price {
   font-size: 1.2em;
-  color: #009688;
+  color: #045201;
   font-weight: bold;
   display: block;
   margin-bottom: 10px;
+  text-align: left;
 }
 
 .product-rating {
@@ -103,9 +114,9 @@
 }
 
 .product-rating img {
-  width: 20px;
-  height: auto;
-  margin-right: 5px;
+  width: 12px;
+  height: 8px;
+  margin-top: 0;
 }
 
 .rating-label {
@@ -125,6 +136,7 @@
   width: 100%;
   margin-bottom: 10px;
   text-decoration: none;
+  align-self: right;
 }
 
 .btn-add-to-cart:hover {
@@ -139,37 +151,45 @@
 }
 
 .seller-info {
-  width: 30%;
-  /* Adjust the width of the seller info */
+  width: 100%; /* Adjust the width of the seller info */
   background-color: #f9f9f9;
-  border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-left: 20px;
-  /* Add margin to the left */
+  margin-left: 12px; /* Add margin to the left */
+  margin-right: 12px;
+  text-align:end ;
+  margin-top: 50px;
 }
 
 .seller-info h3 {
-  font-size: 1.2em;
+  font-size: 20px;
   margin-bottom: 10px;
+  margin: top 20px;
 }
 
 .seller-info p {
   margin-bottom: 5px;
+  font-size: 16px;
 }
 
 .card-container {
-  width: 80%;
-  max-width: 1200px;
-  /* Increase the maximum width of the container */
-  margin: 40px auto;
-  /* Center the container */
+  width: 1200px;
+  max-width: 1200px; /* Increase the maximum width of the container */
+  margin: 80px; /* Center the container */
   display: flex;
   justify-content: space-between;
   /* Space between the card and seller info */
   align-items: flex-start;
 }
-
+.card-container-review {
+  width: 1200px;
+  margin: 80px; /* Center the container */
+  display: flex;
+  justify-content:center; /* Space between the card and seller info */
+  align-items: flex-start;
+  max-width: 1200px;
+  border-radius: 50%;
+}
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
