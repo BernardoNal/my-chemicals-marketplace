@@ -1,8 +1,8 @@
  <div class="container mt-4">
-  <div class="col-md-4 mx-auto px-4  border border-dark rounded-4 bg-white">
+  <div class="col-md-6 mx-auto px-4  border border-dark rounded-4 bg-white">
 
 
-    <h2 class = "text-center py-4">Edit <%= resource_name.to_s.humanize %></h2>
+    <h2 class = "text-center py-2 mt-2">Editar <%= resource_name.to_s.humanize %></h2>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= f.error_notification %>
@@ -14,23 +14,34 @@
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
         <% end %>
         <%= f.input :address,
+                    :label => 'Endereço',
                     required: false,
                     input_html: { autocomplete: "address" }%>
-        <%= f.input :password,
-                    hint: "deixe em branco se não quiser alterá-lo",
-                    required: false,
-                    input_html: { autocomplete: "new-password" } %>
+        <div class="row">
+        <div class="col-6">
+          <%= f.input :password,
+                      :label => 'Nova senha',
+                      hint: "deixe em branco se não quiser alterá-lo",
+                      required: false,
+                      input_html: { autocomplete: "new-password" } %>
+        </div>
+        <div class="col-6">
         <%= f.input :password_confirmation,
+                    :label => 'Nova senha confirmação',
                     required: false,
                     input_html: { autocomplete: "new-password" } %>
+
+        </div>
+        </div>
         <%= f.input :current_password,
+                    :label => 'Senha atual',
                     hint: "precisamos da sua senha atual para confirmar suas alterações",
                     required: true,
                     input_html: { autocomplete: "current-password" } %>
       </div>
 
-      <div class="form-actions">
-        <%= f.button :submit, "Update" , class:'btn-update-product' %>
+      <div class="form-actions row">
+        <%= f.button :submit, "Atualizar" , class:'btn-update-product col-md-12  my-4' %>
       </div>
     <% end %>
 
@@ -40,10 +51,6 @@
     <%# method: :delete %>
     <%# </div>  %>
 
-     <div class='col-md-1 mx-auto mt-2'>
-    <%= link_to "Back", :back %>
-
-     </div>
 
 
   </div>
