@@ -15,4 +15,9 @@ Rails.application.routes.draw do
 
   resources :reviews, only: :destroy
   get "mypurchases" => 'purchases#mypurchases'
+
+  resource :cart, only: [:show, :destroy] do
+    post 'add_product_to_cart', on: :collection
+    post 'purchase_items', on: :member
+  end
 end
