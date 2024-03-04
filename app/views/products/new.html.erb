@@ -1,12 +1,12 @@
-<div class="container mt-4">
-<div class="col-md-8 mx-auto px-4 rounded-2 bg-white">
-<h1>Create a new product</h1>
-<%= simple_form_for @product do |f| %>
-  <%= f.input :name, label_html: { class: "label-form" } %>
-  <%= f.input :price %>
-  <%= f.input :description %>
-  <%= f.input :photo, as: :file %>
-  <%= f.button :submit %>
-<% end %>
-</div>
+<div class="container">
+  <div class="form-shape col-md-6 mx-auto">
+    <h1 class="form-title">Cadastrar novo produto</h1>
+    <%= simple_form_for @product do |f| %>
+      <%= f.input :name, label_html: { class: "label-form" }, label: "Nome" %>
+      <%= f.input :price, label: "Preço" %>
+      <%= f.input :description, label: "Descrição" %>
+      <%= f.input :photo, as: :file, label: "Imagem" %>
+      <%= f.button :submit, class: "my-2 btn-login" %>
+    <% end %>
+  </div>
 </div>
