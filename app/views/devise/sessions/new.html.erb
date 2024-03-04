@@ -2,7 +2,7 @@
   <div class="col-md-4 mx-auto p-4 border border-dark rounded-5 bg-white">
 
 
-<h2>Log in</h2>
+<h2 class = "text-center">Log in</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
@@ -18,11 +18,13 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit , "Log in", class: 'btn-primary py-8 my-2' %>
+    <%= f.button :submit , "Log in", class: 'my-2 btn-login' %>
   </div>
 <% end %>
+<div class='col-md-2 mx-auto'>
+  <%= render "devise/shared/links" %>
+</div>
 
-<%= render "devise/shared/links" %>
 
   </div>
 </div>
