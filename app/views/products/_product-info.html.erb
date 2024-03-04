@@ -10,15 +10,9 @@
     <div class="product-info">
         <h2 class="product-title"><%= @product.name %></h2>
         <p class="product-description"><%= @product.description %></p>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <span class="product-price">R$<%= @product.price %></span>
+        <span class="product-price">R$ <%= @product.price %></span>
         <div class="seller-info">
-          <h3>Seller</h3>
+          <h3>Vendedor</h3>
           <p><%= @product.user.first_name %> <%= @product.user.last_name %></p>
         </div>
         <% if current_user != @product.user %>
