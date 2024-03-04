@@ -9,21 +9,17 @@
     </div>
     <div class="product-info">
         <h2 class="product-title"><%= @product.name %></h2>
-        <p class="product-description" ><%= @product.description%></p>
+        <p class="product-description"><%= @product.description %></p>
         <br>
         <br>
         <br>
         <br>
         <br>
         <br>
-        <br>
-        <div><span class="product-price">RS$<%= @product.price %></span></div>
-         <div>
-          <% if current_user != @product.user %>
-          <%= link_to "Comprar",product_purchases_path(product), data: {turbo_method: :post, turbo_confirm: "Confirmar Compra?"} , class: "btn-add-to-cart"%>
-            <div class="seller-info">
-            <h3>Vendedor</h3>
-            <p><%= @product.user.first_name %> <%= @product.user.last_name %></p>
+        <span class="product-price">R$<%= @product.price %></span>
+        <% if current_user != @product.user %>
+          <%= link_to "Comprar", product_purchases_path(product), data: {turbo_method: :post, turbo_confirm: "Are you sure?"} , class: "btn-add-to-cart"%>
+          <%= link_to "Adicione ao carrinho", add_product_to_cart_cart_path(product_id: product.id), data: { turbo_method: :post, turbo_confirm: "Are you sure?" }, class: "btn-add-to-cart" %>
         <% end %>
         </div>
     </div>
