@@ -18,7 +18,8 @@
         <br>
         <span class="product-price">US$<%= @product.price %></span>
         <% if current_user != @product.user %>
-          <%= link_to "Comprar",product_purchases_path(product), data: {turbo_method: :post, turbo_confirm: "Are you sure?"} , class: "btn-add-to-cart"%>
+          <%= link_to "Comprar", product_purchases_path(product), data: {turbo_method: :post, turbo_confirm: "Are you sure?"} , class: "btn-add-to-cart"%>
+          <%= link_to "Adicione ao carrinho", add_product_to_cart_cart_path(product_id: product.id), data: { turbo_method: :post, turbo_confirm: "Are you sure?" }, class: "btn-add-to-cart" %>
         <% end %>
     </div>
   </div>
