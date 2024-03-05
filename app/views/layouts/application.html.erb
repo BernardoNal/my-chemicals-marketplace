@@ -16,7 +16,9 @@
   <body class="bg-page">
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
-    <%= yield %>
+    <div class="view-75">
+      <%= yield %>
+    </div>
     <%= render "shared/footer" %>
   </body>
 </html>
