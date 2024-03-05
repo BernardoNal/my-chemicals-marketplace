@@ -55,14 +55,6 @@
       text-decoration: underline;
     }
   }
-
-  .container {
-    .row {
-      &:last-child {
-        margin-top: 20px;
-      }
-    }
-  }
 }
 
 .map {
