@@ -2,8 +2,8 @@
 @import "config/colors";
 @import "components/card";
 
-.bg-home {
-  background-color: $light-pink;
+.bg-page {
+  background-color: $bg-page;
   width: 100%;
 }
 
@@ -23,8 +23,7 @@
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   font-size: 32px;
   font-weight: bold;
-  display: flex;
-  justify-content: center;
+  text-align: center;
   font-family: $home-font;
 }
 
