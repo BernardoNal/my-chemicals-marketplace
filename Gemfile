@@ -53,6 +53,8 @@ gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
 gem "sassc-rails"
 gem "cloudinary"
+# gem "simple_form_fancy_uploads"
+# gem "carrierwave", "~> 3.0"
 
 group :development, :test do
   gem "dotenv-rails"

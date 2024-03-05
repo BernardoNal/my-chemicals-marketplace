@@ -1,9 +1,12 @@
-<h1>Edit product <%= @product.name %></h1>
-<%= simple_form_for @product do |f| %>
-  <%= f.input :name %>
-  <%= f.input :price %>
-  <%= f.input :description %>
-  <%= f.button :submit, "Update Product", class:'btn-update-product' %>
-<% end %>
-
-<%= link_to 'Back to my products', myproducts_products_path, class:'btn-back-to-my-products'%>
+<div class="container">
+  <div class="form-shape col-md-6 mx-auto">
+    <h1 class="form-title">Editar <%= @product.name %></h1>
+    <%= simple_form_for @product do |f| %>
+      <%= f.input :name, label: "Nome" %>
+      <%= f.input :price, label: "Preço" %>
+      <%= f.input :description, label: "Descrição" %>
+      <%= f.button :submit, "Update Product", class:'btn-update-product mb-4' %>
+    <% end %>
+    <%= link_to 'Back to my products', myproducts_products_path, class:'btn-back-to-my-products'%>
+  </div>
+</div>

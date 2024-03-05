@@ -9,8 +9,17 @@ Rails.application.routes.draw do
 
   resources :products do
     get "myproducts", on: :collection
-    resources :purchases ,only: [:create]
+    resources :purchases, only: [:create]
+    resources :reviews, only: %i[new create]
   end
 
+  resources :reviews, only: :destroy
   get "mypurchases" => 'purchases#mypurchases'
+
+  resource :cart, only: [:show, :destroy] do
+    post 'add_product_to_cart', on: :collection
+    post 'purchase_items', on: :member
+  end
+
+  resources :cart_items, only: [:destroy]
 end

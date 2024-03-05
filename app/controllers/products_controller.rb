@@ -2,7 +2,11 @@ class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index]
 
   def index
-    @products = Product.all
+    if params[:search].present? && params[:search][:query].present?
+      @products = Product.where("name ILIKE :query OR description ILIKE :query", query: "%#{params[:search][:query]}%")
+    else
+      @products = Product.all
+    end
   end
 
   def new
@@ -22,6 +26,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @review = Review.new
   end
 
   def edit
