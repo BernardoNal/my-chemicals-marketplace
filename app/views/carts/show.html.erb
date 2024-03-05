@@ -1,18 +1,31 @@
-<h2>Seu Carrinho</h2>
+<div class="container mt-4">
+  <h1 class="page-title">Seu carrinho</h1>
 
-<% if @cart.present? && @cart.cart_items.any? %>
-  <ul>
-    <% @cart.cart_items.each do |cart_item| %>
-      <%= cart_item.product.name %>
-      <%= form_with url: cart_item_path(cart_item), method: :delete do %>
-        <%= submit_tag 'Remove', data: { confirm: 'Tem certeza?' }, class: 'btn btn-danger' %>
-      <% end %>
-    <% end %>
-  </ul>
-<% else %>
-  <p>Seu Carrinho está vazio.</p>
-<% end %>
-
-<%= link_to 'Continuar Comprando', products_path %>
-<%= button_to 'Esvaziar Carrinho', cart_path(@cart), method: :delete, data: { confirm: 'Esvaziar o carrinho?' }, class: 'btn btn-warning' %>
-<%= button_to "Comprar", purchase_items_cart_path, method: :post, class: "btn btn-primary", data: { confirm: "Finalizar a Compra?" } %>
+  <% if @cart.present? && @cart.cart_items.any? %>
+    <div class="cards">
+      <% @cart.cart_items.each do |cart_item| %>
+        <div class="card-product">
+          <% if cart_item.product.photo.attached? %>
+            <%= cl_image_tag cart_item.product.photo.key, height: 300, width: 400, crop: :fill %>
+          <% else %>
+            <%= image_tag Faker::LoremFlickr.image(size: "70x70", search_terms: ['fertilizer'])%>
+          <% end %>
+            <div class="card-product-infos">
+              <h2><%= cart_item.product.name %></h2>
+              <p>R$ <%= cart_item.product.price %></p>
+            </div>
+            <%= link_to cart_item_path(cart_item),  data: {turbo_method: :delete, turbo_confirm: "Tem certeza?"}, class:'btn-card-dlt ma mx-2' do  %>
+              <i class="fa-solid fa-trash-can"></i>
+            <%end %>
+        </div>
+        <% end %>
+    </div>
+  <% else %>
+    <p>Seu carrinho está vazio.</p>
+  <% end %>
+  <%# <div class="d-grid"> %>
+      <%= link_to 'Continuar Comprando', products_path, class: "btn-blue" %>
+      <%= button_to 'Esvaziar Carrinho', cart_path(@cart), method: :delete, data: { confirm: 'Limpar carrinho?' }, class: 'btn-yellow my-2' %>
+      <%= button_to "Comprar", purchase_items_cart_path, method: :post, class: "btn-green mb-2", data: { confirm: "Finalizar a compra?" } %>
+  <%# </div> %>
+</div>

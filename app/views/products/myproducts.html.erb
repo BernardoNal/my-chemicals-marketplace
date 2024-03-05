@@ -1,20 +1,24 @@
 <div class="container mt-4">
+  <h1 class="page-title">Seus produtos</h1>
   <%= link_to new_product_path, class: "btn-new-product" do %>
   <i class="fa-solid fa-circle-plus"></i>
   <% end %>
   <div class="cards">
     <% @products.each do |product| %>
-      <div class="card-product m-4">
+      <div class="card-product">
         <% if product.photo.attached? %>
           <%= cl_image_tag product.photo.key, height: 300, width: 400, crop: :fill %>
         <% else %>
           <%= image_tag Faker::LoremFlickr.image(size: "70x70", search_terms: ['fertilizer'])%>
         <% end %>
         <div class="card-product-infos">
-          <h2> <%= product.name %> </h2>
-          <p><strong> <%= product.description.truncate(50) %> </strong></p>
-          <p><strong> R$<%= product.price %> </strong></p>
-          <div class="product-btn">
+          <div class="">
+            <h2> <%= product.name %> </h2>
+            <p><strong> <%= product.description.truncate(50) %> </strong></p>
+            <p><strong>R$ <%= product.price %> </strong></p>
+          </div>
+          </div>
+          <div class="product-btn d-flex justify-content-end align-self-end m-2">
             <% if product.purchases.count == 0 %>
               <%= link_to 'Edit', edit_product_path(product), class:'btn-card-edit ma' %>
               <%= link_to product_path(product),  data: {turbo_method: :delete, turbo_confirm: "Confirma exclusão de Produto?"}, class:'btn-card-dlt ma' do  %>
@@ -22,7 +26,7 @@
               <%end %>
             <% end %>
           </div>
-        </div>
+
       </div>
     <% end %>
   </div>
