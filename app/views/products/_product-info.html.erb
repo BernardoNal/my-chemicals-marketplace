@@ -7,8 +7,7 @@
         <%= image_tag Faker::LoremFlickr.image(size: "400x400", search_terms: ['fertilizer']) ,class:'img-fluid'%>
       <% end %>
     </div>
-    <div class="product-info p-2 my-2 d-flex justify-content-between flex-column">
-    <div class="d-flex flex-column align-items-start">
+    <div class="product-info pt-2 px-2 mt-2">
         <h2 class="product-title"><%= @product.name %></h2>
         <p class="product-description"><%= @product.description %></p>
         <span class="product-price">R$ <%= sprintf("%.2f", @product.price) %></span>
@@ -26,7 +25,7 @@
 </div>
 
 <div class="card-container-review">
-  <div class="card col-5 mx-5">
+  <div class="card w-50">
     <div class="card-header">
       Avaliações
     </div>
@@ -50,13 +49,13 @@
     </ul>
   </div>
 
-  <div class="card shadow-sm bg-white col-6">
+  <div class="card shadow-sm bg-white w-50">
   <h2 class="m-3">Adicionar nova Avaliação?</h2>
     <div class="m-3">
       <%= simple_form_for [@product, @review] do |f| %>
         <%= f.input :rating, collection: (1..5).to_a, label: "Avalie este produto", input_html: {data: {controller: "star-rating"}} %>
         <%= f.input :content %>
-        <%= f.submit "Enviar avaliação", class: "btn-login" %>
+        <%= f.submit "Enviar avaliação", class: "btn-review" %>
       <% end %>
     </div>
   </div>
