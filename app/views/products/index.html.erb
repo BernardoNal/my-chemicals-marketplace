@@ -13,11 +13,11 @@
   <div class="cards">
     <div class="row">
       <% @products.each do |product| %>
-        <%# <% if product.quantity == 0 %>
+        <% if product.quantity == 0 %>
           <div class="col-4">
             <%= render("product", product: product)  %>
           </div>
-          <%# <% end %>
+          <% end %>
         <% end %>
     </div>
   </div>

@@ -109,3 +109,49 @@
 .btn-add-to-cart:hover {
   background-color: #00796b;
 }
+
+.btn-green {
+  color: white;
+  padding: 4px 8px;
+  border-radius: 8px;
+  background: $dark-green;
+  font-size: 16px;
+  text-align: center;
+  border: none;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.1s ease;
+  &:hover {
+    background-color: #68715c;
+  }
+}
+
+.btn-yellow {
+  color: $gray;
+  padding: 4px 8px;
+  border-radius: 8px;
+  background: $yellow;
+  font-size: 16px;
+  text-align: center;
+  border: none;
+  font-weight: 500;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.1s ease;
+  &:hover {
+    background-color: #f3bb55;
+  }
+}
+
+.btn-blue {
+  color: white;
+  padding: 4px 8px;
+  border-radius: 8px;
+  background: $blue;
+  text-decoration: none;
+  font-size: 16px;
+  text-align: center;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.1s ease;
+  &:hover {
+    background-color: #0d67ec;
+  }
+}
