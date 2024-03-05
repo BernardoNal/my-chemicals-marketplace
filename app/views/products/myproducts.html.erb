@@ -1,10 +1,11 @@
 <div class="container mt-4">
+  <h1 class="page-title">Seus produtos</h1>
   <%= link_to new_product_path, class: "btn-new-product" do %>
   <i class="fa-solid fa-circle-plus"></i>
   <% end %>
   <div class="cards">
     <% @products.each do |product| %>
-      <div class="card-product m-4">
+      <div class="card-product">
         <% if product.photo.attached? %>
           <%= cl_image_tag product.photo.key, height: 300, width: 400, crop: :fill %>
         <% else %>
@@ -23,7 +24,7 @@
               <%end %>
             <% end %>
           </div>
-        </div>
+
       </div>
     <% end %>
   </div>
