@@ -1,5 +1,6 @@
 <div class="container mt-4">
   <h1 class="page-title">Seu carrinho</h1>
+
   <% if @cart.present? && @cart.cart_items.any? %>
     <div class="cards">
       <% @cart.cart_items.each do |cart_item| %>
@@ -17,14 +18,14 @@
               <i class="fa-solid fa-trash-can"></i>
             <%end %>
         </div>
+        <% end %>
     </div>
-  <% end %>
   <% else %>
     <p>Seu carrinho está vazio.</p>
   <% end %>
   <%# <div class="d-grid"> %>
       <%= link_to 'Continuar Comprando', products_path, class: "btn-blue" %>
       <%= button_to 'Esvaziar Carrinho', cart_path(@cart), method: :delete, data: { confirm: 'Limpar carrinho?' }, class: 'btn-yellow my-2' %>
-      <%= button_to "Comprar", purchase_items_cart_path, method: :post, class: "btn-green", data: { confirm: "Finalizar a compra?" } %>
+      <%= button_to "Comprar", purchase_items_cart_path, method: :post, class: "btn-green mb-2", data: { confirm: "Finalizar a compra?" } %>
   <%# </div> %>
 </div>
