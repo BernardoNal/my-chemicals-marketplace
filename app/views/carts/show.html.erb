@@ -12,8 +12,18 @@
           <% end %>
             <div class="card-product-infos">
               <h2><%= cart_item.product.name %></h2>
+              <p>Quantidade: <%= cart_item.quantity %></p>
               <p>R$ <%= cart_item.product.price %></p>
             </div>
+            <%= form_with(model: cart_item, local: true) do |form| %>
+              <div class="field">
+                <%= form.label :quantity %>
+                <%= form.number_field :quantity, min: 1 %>
+              </div>
+              <div class="actions">
+                <%= form.submit "Update quantity" %>
+              </div>
+            <% end %>
             <%= link_to cart_item_path(cart_item),  data: {turbo_method: :delete, turbo_confirm: "Tem certeza?"}, class:'btn-card-dlt ma mx-2' do  %>
               <i class="fa-solid fa-trash-can"></i>
             <%end %>

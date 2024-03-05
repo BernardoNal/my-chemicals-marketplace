@@ -20,7 +20,7 @@
             <%= form.number_field :quantity, value: 1, min: 1 %>
             <%= form.submit "Add to Cart" %>
           <% end %>
-          <%= link_to "Comprar agora", product_purchases_path(product), data: {turbo_method: :post, turbo_confirm: "Confirmar compra?"} , class: "btn-add-to-cart mx-2"%>
+          <%= link_to "Comprar agora", product_purchases_path(product), data: {turbo_method: :post, turbo_confirm: "Confirmar compra?"} , class: "btn-add-to-cart mx-2 m-3"%>
         </div>
         <% end %>
         </div>
