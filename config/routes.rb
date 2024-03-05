@@ -21,5 +21,5 @@ Rails.application.routes.draw do
     post 'purchase_items', on: :member
   end
 
-  resources :cart_items, only: [:edit, :update, :destroy]
+  resources :cart_items, only: [:destroy]
 end

@@ -6,5 +6,5 @@ class Product < ApplicationRecord
   has_many :carts, through: :cart_items
   has_one_attached :photo
   validates :name, :price, :description, :photo, presence: true
-  validates :quantity, presence: true, numericality: { greater_than_or_equal_to: 0 }
+  # validates :quantity, presence: true, numericality: { greater_than_or_equal_to: 0 }
 end

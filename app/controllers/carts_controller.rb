@@ -7,56 +7,31 @@ class CartsController < ApplicationController
 
   def add_product_to_cart
     product = Product.find(params[:product_id])
-    quantity = params[:quantity].to_i
     @cart = current_cart
 
-    new_item = @cart.cart_items.find_or_initialize_by(product: product)
+    new_item = @cart.cart_items.build(product: product)
 
-    new_item.quantity ||= 0
-    new_item.quantity += quantity
-
-    if new_item.quantity > product.quantity
-      redirect_to product_path(product), alert: 'Not enough product quantity available.'
-    elsif new_item.save
+    if new_item.save
       redirect_to cart_path, notice: 'Product added to cart.'
     else
-      redirect_to product_path(product), alert: 'There was a problem adding the product to the cart.'
+      redirect_to product, alert: 'There was a problem adding the product to the cart.'
     end
   end
 
   def purchase_items
     @cart = current_cart
-    insufficient_stock = false
+    cart_items = @cart.cart_items
 
     ActiveRecord::Base.transaction do
-      @cart.cart_items.each do |cart_item|
-        @product = cart_item.product
-        new_quantity = @product.quantity - cart_item.quantity
-
-        if new_quantity.negative?
-
-          insufficient_stock = true
-          raise ActiveRecord::Rollback
-        end
-
-        @product.update!(quantity: new_quantity)
-        Purchase.create!(user: current_user, product: @product, quantity: cart_item.quantity, date_purchase: Time.zone.now)
+      cart_items.each do |cart_item|
+        Purchase.create!(user: current_user, product: cart_item.product, date_purchase: Time.zone.now)
       end
-      @cart.destroy!
+      @cart.destroy
     end
-
-    if insufficient_stock
-
-      flash[:alert] = 'Sorry, there was not enough stock for one or more products.'
-      redirect_to cart_path
-    else
-
-      session[:cart_id] = nil
-
-      redirect_to mypurchases_path, notice: 'Thank you for your purchase!'
-    end
+    session[:cart_id] = nil
+    redirect_to mypurchases_path, notice: 'Thank you for your purchase!'
   rescue ActiveRecord::RecordInvalid => e
-    Rails.logger.error("Purchase failed due to validation error: #{e.message}")
+    Rails.logger.error("Purchase failed: #{e.message}")
     flash[:alert] = 'Sorry, there was a problem with your purchase.'
     redirect_to cart_path
   end
