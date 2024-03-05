@@ -1,13 +1,13 @@
 .btn-new-product {
   color: white;
-  padding: 4px 10px ;
+  padding: 4px 10px;
   border-radius: 50%;
   background: $dark-green;
   text-decoration: none;
   position: fixed;
-  bottom:20px;
+  bottom: 20px;
   right: 20px;
-  font-size:24px;
+  font-size: 24px;
 
 }
 
@@ -19,16 +19,16 @@
 
 .btn-card-edit {
   color: white;
-  padding: 4px 8px ;
+  padding: 4px 8px;
   border-radius: 8px;
   background: $dark-green;
   text-decoration: none;
   font-size: 16px;
 }
 
-.btn-add-to-cart{
+.btn-add-to-cart {
   color: white;
-  padding: 4px 8px ;
+  padding: 4px 8px;
   border-radius: 12px;
   background: $dark-green;
   text-decoration: none;
@@ -37,17 +37,16 @@
 
 .btn-card-dlt {
   color: white;
-  padding: 4px 8px ;
+  padding: 4px 8px;
   border-radius: 8px;
   background: red;
   text-decoration: none;
   font-size: 16px;
-
 }
 
 .btn-back-to-my-products {
   color: white;
-  padding: 4px 8px ;
+  padding: 4px 8px;
   border-radius: 8px;
   background: $dark-green;
   text-decoration: none;
@@ -56,7 +55,7 @@
 
 .btn-update-product {
   color: white;
-  padding: 4px 8px ;
+  padding: 4px 8px;
   border-radius: 8px;
   background: $dark-green;
   text-decoration: none;
@@ -71,7 +70,7 @@
 
 .btn-review {
   color: white;
-  padding: 4px 8px ;
+  padding: 4px 8px;
   border-radius: 8px;
   background: $dark-green;
 }
@@ -84,7 +83,7 @@
 
 .btn-login {
   color: white;
-  padding: 4px 8px ;
+  padding: 4px 8px;
   border-radius: 8px;
   background: $dark-green;
   text-decoration: none;
@@ -116,4 +115,50 @@
 .btn-add-to-cart:hover {
   color: #fff;
   background-color: #5c7441;
+}
+
+.btn-green {
+  color: white;
+  padding: 4px 8px;
+  border-radius: 8px;
+  background: $dark-green;
+  font-size: 16px;
+  text-align: center;
+  border: none;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.1s ease;
+  &:hover {
+    background-color: #68715c;
+  }
+}
+
+.btn-yellow {
+  color: $gray;
+  padding: 4px 8px;
+  border-radius: 8px;
+  background: $yellow;
+  font-size: 16px;
+  text-align: center;
+  border: none;
+  font-weight: 500;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.1s ease;
+  &:hover {
+    background-color: #f3bb55;
+  }
+}
+
+.btn-blue {
+  color: white;
+  padding: 4px 8px;
+  border-radius: 8px;
+  background: $blue;
+  text-decoration: none;
+  font-size: 16px;
+  text-align: center;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.1s ease;
+  &:hover {
+    background-color: #0d67ec;
+  }
 }
