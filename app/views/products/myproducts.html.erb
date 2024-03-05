@@ -13,6 +13,7 @@
         <div class="card-product-infos">
           <h2> <%= product.name %> </h2>
           <p><strong> <%= product.description.truncate(50) %> </strong></p>
+          <p><strong> Estoque: <%= product.quantity %> </strong></p>
           <p><strong> R$<%= product.price %> </strong></p>
           <div class="product-btn">
             <% if product.purchases.count == 0 %>
