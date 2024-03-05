@@ -2,7 +2,7 @@
   color: white;
   padding: 4px 10px ;
   border-radius: 50%;
-  background: $btn-green;
+  background: $dark-green;
   text-decoration: none;
   position: fixed;
   bottom:20px;
@@ -12,8 +12,8 @@
 }
 
 .btn-new-product:hover {
-  background: #409106;
-  color: white;
+  background: #5c7441;
+  color: #fff;
   transition: background 0.3s ease;
 }
 
@@ -21,7 +21,7 @@
   color: white;
   padding: 4px 8px ;
   border-radius: 8px;
-  background: $btn-green;
+  background: $dark-green;
   text-decoration: none;
   font-size: 16px;
 }
@@ -30,7 +30,7 @@
   color: white;
   padding: 4px 8px ;
   border-radius: 12px;
-  background: #067103;
+  background: $dark-green;
   text-decoration: none;
   font-size: 20px;
 }
@@ -49,7 +49,7 @@
   color: white;
   padding: 4px 8px ;
   border-radius: 8px;
-  background: $btn-green;
+  background: $dark-green;
   text-decoration: none;
   font-size: 16px;
 }
@@ -58,13 +58,13 @@
   color: white;
   padding: 4px 8px ;
   border-radius: 8px;
-  background: #b1b5b6;
+  background: $dark-green;
   text-decoration: none;
   font-size: 16px;
 }
 
 .btn-update-product:hover {
-  background: #409106;
+  background: #5c7441;
   transition: background 0.3s ease;
 }
 
@@ -72,26 +72,31 @@
   color: white;
   padding: 4px 8px ;
   border-radius: 8px;
-  background: #067103;
+  background: $dark-green;
+}
+
+.btn-review:hover {
+  background: #5c7441;
+  transition: background 0.3s ease;
 }
 
 .btn-login {
   color: white;
   padding: 4px 8px ;
   border-radius: 8px;
-  background: $btn-green;
+  background: $dark-green;
   text-decoration: none;
   font-size: 16px;
   width: 100%;
 }
 
 .btn-login:hover {
-  background: #409106;
+  background: #5c7441;
   transition: background 0.3s ease;
 }
 
 .btn-add-to-cart {
-  background-color: #009688;
+  background-color: $dark-green;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -106,5 +111,5 @@
 }
 
 .btn-add-to-cart:hover {
-  background-color: #00796b;
+  background-color: #5c7441;
 }

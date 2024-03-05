@@ -55,7 +55,7 @@
       <%= simple_form_for [@product, @review] do |f| %>
         <%= f.input :rating, collection: (1..5).to_a, label: "Avalie este produto", input_html: {data: {controller: "star-rating"}} %>
         <%= f.input :content %>
-        <%= f.submit "Enviar avaliação", class: "btn-review" %>
+        <%= f.submit "Enviar avaliação", class: "btn-login" %>
       <% end %>
     </div>
   </div>
