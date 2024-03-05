@@ -12,7 +12,7 @@
         <p class="product-description"><%= @product.description %></p>
         <p class="product-description">Estoque: <%= @product.quantity %></p>
         <span class="product-price">R$ <%= sprintf("%.2f", @product.price) %></span>
-          <p>Vendedor: <%= @product.user.first_name %> <%= @product.user.last_name %></p>
+          <p>Vendedor: <%= @product.user.first_name.titleize %> <%= @product.user.last_name.titleize %></p>
         <% if current_user != @product.user %>
           <div class="mt-2">
             <%= form_with url: add_product_to_cart_cart_path do |form| %>
