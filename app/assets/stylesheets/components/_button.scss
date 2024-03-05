@@ -1,104 +1,98 @@
 .btn-new-product {
   color: white;
-  padding: 4px 10px;
+  padding: 4px 10px ;
   border-radius: 50%;
-  background: $dark-green;
+  background: $btn-green;
   text-decoration: none;
   position: fixed;
-  bottom: 20px;
+  bottom:20px;
   right: 20px;
-  font-size: 24px;
+  font-size:24px;
 
 }
 
 .btn-new-product:hover {
-  background: #5c7441;
-  color: #fff;
+  background: #409106;
+  color: white;
   transition: background 0.3s ease;
 }
 
 .btn-card-edit {
   color: white;
-  padding: 4px 8px;
+  padding: 4px 8px ;
   border-radius: 8px;
-  background: $dark-green;
+  background: $btn-green;
   text-decoration: none;
   font-size: 16px;
 }
 
-.btn-add-to-cart {
+.btn-add-to-cart{
   color: white;
-  padding: 4px 8px;
+  padding: 4px 8px ;
   border-radius: 12px;
-  background: $dark-green;
+  background: #067103;
   text-decoration: none;
   font-size: 20px;
 }
 
 .btn-card-dlt {
   color: white;
-  padding: 4px 8px;
+  padding: 4px 8px ;
   border-radius: 8px;
   background: red;
   text-decoration: none;
   font-size: 16px;
+
 }
 
 .btn-back-to-my-products {
   color: white;
-  padding: 4px 8px;
+  padding: 4px 8px ;
   border-radius: 8px;
-  background: $dark-green;
+  background: $btn-green;
   text-decoration: none;
   font-size: 16px;
 }
 
 .btn-update-product {
   color: white;
-  padding: 4px 8px;
+  padding: 4px 8px ;
   border-radius: 8px;
-  background: $dark-green;
+  background: #b1b5b6;
   text-decoration: none;
   font-size: 16px;
   width: 100%;
 }
 
 .btn-update-product:hover {
-  background: #5c7441;
+  background: #409106;
   transition: background 0.3s ease;
 }
 
 .btn-review {
   color: white;
-  padding: 4px 8px;
+  padding: 4px 8px ;
   border-radius: 8px;
-  background: $dark-green;
-}
-
-.btn-review:hover {
-  color: #fff;
-  background: #5c7441;
-  transition: background 0.3s ease;
+  background: #067103;
 }
 
 .btn-login {
   color: white;
-  padding: 4px 8px;
+  padding: 4px 8px ;
   border-radius: 8px;
-  background: $dark-green;
+  background: $btn-green;
   text-decoration: none;
   font-size: 16px;
   width: 100%;
 }
 
 .btn-login:hover {
-  color: #fff;
-  background: #5c7441;
+  background: #409106;
   transition: background 0.3s ease;
 }
 
 .btn-add-to-cart {
-  background-color: $dark-green;
+  background-color: #009688;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -113,8 +107,7 @@
 }
 
 .btn-add-to-cart:hover {
-  color: #fff;
-  background-color: #5c7441;
+  background-color: #00796b;
 }
 
 .btn-green {

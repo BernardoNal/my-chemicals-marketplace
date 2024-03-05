@@ -3,6 +3,7 @@
     <h1 class="form-title">Editar <%= @product.name %></h1>
     <%= simple_form_for @product do |f| %>
       <%= f.input :name, label: "Nome" %>
+      <%= f.input :quantity, label: "Quantidade" %>
       <%= f.input :price, label: "Preço" %>
       <%= f.input :description, label: "Descrição" %>
       <%= f.button :submit, "Atualizar Produto", class:'btn-update-product mb-4' %>

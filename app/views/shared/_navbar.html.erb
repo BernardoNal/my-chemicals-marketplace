@@ -16,13 +16,11 @@
           Bem vindo <%= current_user.first_name.titleize %> <i class="fa-solid fa-caret-down"></i>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <div>
               <%= link_to "Meu carrinho", cart_path, class: "dropdown-item" %>
               <%= link_to "Meus produtos", "/products/myproducts", class: "dropdown-item" %>
               <%= link_to "Meus pedidos", mypurchases_path, class: "dropdown-item" %>
               <%= link_to "Minha conta", edit_user_registration_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            </div>
             </div>
           </li>
         <% else %>

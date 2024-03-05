@@ -5,10 +5,11 @@
   <thead>
     <tr>
       <th class='text-center' scope="col">#</th>
-      <th class='text-center' scope="col">Produto Químico</th>
-      <th class='text-center' scope="col">Preço</th>
-      <th class='text-center' scope="col">Data de Compra</th>
-      <th  class='text-center' scope="col">Vendedor</th>
+      <th class='text-center' scope="col">Chemical</th>
+      <th class='text-center' scope="col">Quantity</th>
+      <th class='text-center' scope="col">Price</th>
+      <th class='text-center' scope="col">Date</th>
+      <th  class='text-center' scope="col">Seller</th>
     </tr>
   </thead>
   <tbody>
@@ -16,7 +17,8 @@
       <tr>
         <th class='text-center' scope="row">0<%= purchase.id %></th>
         <td class='text-center'><%= purchase.product.name %></td>
-        <td class='text-center'>$ <%= sprintf("%.2f", purchase.product.price) %></td>
+        <td class='text-center'><%= purchase.quantity %></td>
+        <td class='text-center'>$ <%= sprintf("%.2f", purchase.product.price*purchase.quantity) %></td>
         <td class='text-center'><%= purchase.date_purchase.strftime('%d/%m/%Y') %></td>
         <td class='text-center'><%= purchase.product.user.first_name.titleize %> <%= purchase.product.user.last_name.titleize %></td>
     </tr>
