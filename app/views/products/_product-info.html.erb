@@ -39,9 +39,9 @@
       <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
           <% if review.user %>
-            <div class="fw-bold mb-2">Comentario de <%= review.user.first_name %> <%= review.user.last_name %>:</div>
+            <div class="fw-bold mb-2">Comentário de <%= review.user.first_name %> <%= review.user.last_name %>:</div>
           <% else %>
-            <div class="fw-bold mb-2">Usuario anônimo:</div>
+            <div class="fw-bold mb-2">Usuário anônimo:</div>
           <% end %>
           <p>- <%= review.content %></p>
         </div>
@@ -59,8 +59,8 @@
     <div class="m-3">
       <%= simple_form_for [@product, @review] do |f| %>
         <%= f.input :rating, collection: (1..5).to_a, label: "Avalie este produto", input_html: {data: {controller: "star-rating"}} %>
-        <%= f.input :content %>
-        <%= f.submit "Enviar avaliação", class: "btn-review" %>
+        <%= f.input :content, label: "Avaliação.."%>
+        <%= f.submit "Enviar avaliação", class: "btn-login" %>
       <% end %>
     </div>
   </div>

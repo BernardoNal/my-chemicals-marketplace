@@ -7,7 +7,7 @@
     <% end %>
     <div class="card-product-infos">
       <h2><%= product.name %></h2>
-      <p>R$ <%= product.price %></p>
+      <p>R$ <%= sprintf("%.2f", product.price) %></p>
     </div>
   </div>
 <% end %>
