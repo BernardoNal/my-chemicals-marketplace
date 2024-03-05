@@ -15,15 +15,15 @@
               <p>Estoque: <%= cart_item.product.quantity %></p>
               <p>Quantidade: <%= cart_item.quantity %></p>
               <p>R$ <%= cart_item.product.price %></p>
-              <p>Total R$<%= cart_item.product.price*cart_item.quantity %></p>
+              <p>Total R$ <%= cart_item.product.price*cart_item.quantity %></p>
             </div>
             <%= form_with(model: cart_item, local: true) do |form| %>
               <div class="field">
                 <%= form.label :quantity %>
                 <%= form.number_field :quantity, min: 1 %>
               </div>
-              <div class="actions">
-                <%= form.submit "Update quantity" %>
+              <div class="actions m-2">
+                <%= form.submit "Atualizar quantidade", class: "btn-blue" %>
               </div>
             <% end %>
             <%= link_to cart_item_path(cart_item),  data: {turbo_method: :delete, turbo_confirm: "Tem certeza?"}, class:'btn-card-dlt ma mx-2' do  %>
