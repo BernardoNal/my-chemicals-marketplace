@@ -17,12 +17,14 @@
               <i class="fa-solid fa-trash-can"></i>
             <%end %>
         </div>
+    </div>
   <% end %>
   <% else %>
     <p>Seu carrinho está vazio.</p>
   <% end %>
-    </div>
-      <%= link_to 'Continuar Comprando', products_path %>
-      <%= button_to 'Esvaziar Carrinho', cart_path(@cart), method: :delete, data: { confirm: 'Are you sure you want to empty your cart?' }, class: 'btn btn-warning' %>
-      <%= button_to "Comprar", purchase_items_cart_path, method: :post, class: "btn btn-primary", data: { confirm: "Finalizar a compra?" } %>
+  <%# <div class="d-grid"> %>
+      <%= link_to 'Continuar Comprando', products_path, class: "btn-blue" %>
+      <%= button_to 'Esvaziar Carrinho', cart_path(@cart), method: :delete, data: { confirm: 'Limpar carrinho?' }, class: 'btn-yellow my-2' %>
+      <%= button_to "Comprar", purchase_items_cart_path, method: :post, class: "btn-green", data: { confirm: "Finalizar a compra?" } %>
+  <%# </div> %>
 </div>
