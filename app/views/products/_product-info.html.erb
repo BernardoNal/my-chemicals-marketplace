@@ -12,7 +12,7 @@
         <h2 class="product-title"><%= @product.name %></h2>
         <p class="product-description"><%= @product.description %></p>
         <span class="product-price">R$ <%= sprintf("%.2f", @product.price) %></span>
-        <p>Vendedor: <%= @product.user.first_name %> <%= @product.user.last_name %></p>
+        <p>Vendedor: <%= @product.user.first_name.titleize %> <%= @product.user.last_name.titleize %></p>
     </div>
     <% if current_user != @product.user %>
         <div class=" align-items-center">
@@ -23,8 +23,6 @@
 </div>
     </div>
   </div>
-  </div>
-</div>
 
 <div class="card-container-review">
   <div class="card col-5 mx-5">
