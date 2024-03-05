@@ -12,8 +12,10 @@
           <% end %>
             <div class="card-product-infos">
               <h2><%= cart_item.product.name %></h2>
+              <p>Estoque: <%= cart_item.product.quantity %></p>
               <p>Quantidade: <%= cart_item.quantity %></p>
               <p>R$ <%= cart_item.product.price %></p>
+              <p>Total R$<%= cart_item.product.price*cart_item.quantity %></p>
             </div>
             <%= form_with(model: cart_item, local: true) do |form| %>
               <div class="field">
