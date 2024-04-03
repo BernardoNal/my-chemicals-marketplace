@@ -26,7 +26,7 @@ My Chemicals Marketplace é uma aplicação web que permite aos usuários compra
 - HTML
 - CSS
 - JavaScript
-- Rails on ruby
+- Ruby on Rails
 - Ajax
 
 
